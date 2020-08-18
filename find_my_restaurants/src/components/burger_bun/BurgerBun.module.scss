@@ -1,6 +1,17 @@
-.BurgerBun{
-    
+@mixin Burger {
+    height: 100%;
+    width:100%;
+    background-color: rgb(187, 123, 38);
 }
-.erect{
 
+.burgerErect{
+    @include Burger;
+    border-top-right-radius:80px;
+    border-top-left-radius:80px;
+}
+
+.burgerInverted{
+    @include Burger;
+    border-bottom-right-radius:20px;
+    border-bottom-left-radius:20px;
 }

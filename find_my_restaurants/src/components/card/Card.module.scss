@@ -1,0 +1,26 @@
+span{
+    display: inline-block;
+}
+
+.Card{
+    width:499px;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+    .ImageContainer{
+        width: 90%;
+        height: 50%;
+        border-width:2px solid black;
+        border-radius: 2px;
+    }
+
+    .descrption{
+        width: 90%;
+        height: 40%;
+        border-width:2px solid black;
+        border-radius: 2px;
+    }
+}
