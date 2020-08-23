@@ -1,37 +1,28 @@
-import React from "react";
+import React, {useEffect } from "react";
 
 import Header from "../header/Header";
 import Footer from "../footer/Footer";
 import CardContainer from "../cardContainer/CardContainer";
+import LogicBox from "../logicBox/LogicsBox";
+import useResults from "../../hooks/useResults";
 import classes from "./App.module.scss";
 
-import foodImg from "../../assets/images/food_image1.jpg";
-import LogicBox from "../logicBox/LogicsBox";
-
-const data = {
-  dataImg: foodImg,
-  description: {
-    rating: "3 stars",
-    location: "bangalore",
-  },
-};
-
-let data_array = [];
-for (let i = 0; i < 100; i++) {
-  data_array.push(data);
-}
-
-console.log(data_array);
-
 const App = () => {
+  const [searchApi, results, errorMessage] = useResults();
+  console.log(results);
+
+  //to run this code only one time
+  useEffect(() => {
+    searchApi("pune");
+  }, []);
 
   const handleKeyDownInput = (e) => {
     console.log("called");
     console.log(e);
-    if(e.key === 'Enter'){
+    if (e.key === "Enter" && e.target.value !=="") {
       console.log(e.target.value);
     }
-  }
+  };
 
   return (
     <React.Fragment>
@@ -40,8 +31,8 @@ const App = () => {
       </header>
 
       <main className={classes.Main}>
-          <LogicBox inputSearch={handleKeyDownInput}/>
-          <CardContainer data = {data_array} />
+        <LogicBox inputSearch={handleKeyDownInput} />
+        <CardContainer data={results} />
       </main>
 
       <footer>

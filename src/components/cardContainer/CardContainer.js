@@ -10,8 +10,10 @@ const CardContainer = (props) => {
 
     const renderCards = () => {
         let array_cards = [];
+        let i = 0;
         for (let elemobj of data){
-            array_cards.push (<Card CardData={elemobj}/>);
+            ++i;
+            array_cards.push (<Card key={i} CardData={elemobj}/>);
         }
         return array_cards;
     }
