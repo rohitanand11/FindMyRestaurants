@@ -1,4 +1,4 @@
-import React, {useEffect } from "react";
+import React, {useState,useEffect } from "react";
 
 import Header from "../header/Header";
 import Footer from "../footer/Footer";
@@ -8,7 +8,8 @@ import useResults from "../../hooks/useResults";
 import classes from "./App.module.scss";
 
 const App = () => {
-  const [searchApi, results, errorMessage] = useResults();
+
+  const [searchApi,isCity, results, errorMessage] = useResults();
   console.log(results);
 
   //to run this code only one time
@@ -25,6 +26,15 @@ const App = () => {
     }
   };
 
+  const renderIscity = () => {
+    if (isCity === false) {
+      return <div className={classes.isCity}>Please enter a valid city</div>;
+    } else {
+      return null;
+    }
+  };
+
+
   return (
     <React.Fragment>
       <header>
@@ -33,6 +43,7 @@ const App = () => {
 
       <main className={classes.Main}>
         <LogicBox inputSearch={handleKeyDownInput} />
+        {renderIscity()}
         <CardContainer data={results} />
       </main>
 
