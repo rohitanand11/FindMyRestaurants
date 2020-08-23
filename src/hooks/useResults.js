@@ -7,13 +7,15 @@ export default () => {
 
   const searchApi = async (searchTerm) => {
   
-      const city_response = await zomato.get("/city", {
+      const city_response = await zomato.get("/cities", {
         params: {
           q: searchTerm,       
         }});
+
+        console.log("city response ->" , typeof(city_response), city_response);
         const response = await zomato.get("/search", {
           params: {
-            city_id: city_response.location_suggestions[0].id,
+            city_id: city_response.data.location_suggestions[0].id,
           
         }});
       

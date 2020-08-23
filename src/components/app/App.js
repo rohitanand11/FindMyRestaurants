@@ -21,6 +21,7 @@ const App = () => {
     console.log(e);
     if (e.key === "Enter" && e.target.value !=="") {
       console.log(e.target.value);
+      searchApi(e.target.value);
     }
   };
 
