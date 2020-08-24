@@ -6,7 +6,7 @@ import Classes from './CardContainer.module.scss';
 const CardContainer = (props) => {
 
     const {data} = props;
-    console.log(data);
+    // console.log(data);
 
     const renderCards = () => {
         let array_cards = [];

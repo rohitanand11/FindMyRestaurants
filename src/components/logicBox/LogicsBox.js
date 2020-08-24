@@ -7,7 +7,7 @@ const LogicBox = (props) => {
     return(
         <div className={Classes.LogicBox}>
             <InputBox updateLocation = {props.inputSearch}/>
-            <FilterBox />
+            <FilterBox sortBy={props.sortBy}/>
         </div>
     );
 }

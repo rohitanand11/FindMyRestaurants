@@ -1,5 +1,5 @@
 import React from "react";
-import randomImage from "../../utility/Utility";
+import {randomImage} from "../../utility/Utility";
 import Classes from "./Card.module.scss";
 
 const Card = (props) => {

@@ -2,7 +2,7 @@ import React from "react";
 import Classes from "./InputBox.module.scss";
 
 const InputBox = (props) => {
-  console.log(props.updateLocation);
+  // console.log(props.updateLocation);
   return (
     <div className={Classes.InputBox}>
       <input
